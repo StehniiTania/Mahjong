@@ -1,0 +1,115 @@
+﻿<Window x:Class="Madzong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Madzong"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="430" Width="760">    
+    <Grid x:Name="Frame" Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>   
+        <!--кнопка помощь-->
+        <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Margin="5,20,0,0"
+                CornerRadius="10" Width="50" Height="50" Background="Gold">
+        <Button  Width="40" Height="40" Background="White" 
+                 Click="Button_Click_Help" BorderBrush="Gold">
+            <StackPanel Orientation="Horizontal">
+                    <Image Source="Picture/magic.png" Margin="0,0,5,0" />                
+            </StackPanel>
+        </Button>
+        </Border>
+        <!--кнопка перемешивание-->
+        <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Margin="5,100,0,0"
+                CornerRadius="10" Width="50" Height="50" Background="Gold">
+            <Button  Width="40" Height="40" Background="White"  
+                 Click="Button_Click_Mix" BorderBrush="White">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Picture/mix.png" Margin="0,0,5,0" />
+                </StackPanel>
+            </Button>
+        </Border>
+        <!--кнопка игра на 18 карт-->
+        <Border Grid.Column="0" Grid.Row="1" Margin="0,20,0,0" VerticalAlignment="Top"
+                CornerRadius="10" Width="50" Height="50" Background="Gold">
+            <Button x:Name="Game18" Width="40" Height="40" Background="White" Content="36"
+                 FontSize="20" FontWeight="Bold" Click="Button_Click_Select">                 
+            </Button>
+        </Border>
+        <!--кнопка игра на 72 карты-->
+        <Border Grid.Column="0" Grid.Row="1" Margin="0,80,0,0" VerticalAlignment="Top"
+                CornerRadius="10" Width="50" Height="50" Background="Gold">
+            <Button x:Name="Game72" Width="40" Height="40" Background="White" Content="72"
+                 FontSize="20" FontWeight="Bold" Click="Button_Click_Select">
+            </Button>
+        </Border>
+        <!--кнопка игра на 162 карты-->
+        <Border Grid.Column="0" Grid.Row="1" Margin="0,140,0,0" VerticalAlignment="Top"
+                CornerRadius="10" Width="50" Height="50" Background="Gold">
+            <Button x:Name="Game162" Width="40" Height="40" Background="White" Content="162"
+                 FontSize="20" FontWeight="Bold" Click="Button_Click_Select">
+            </Button>
+        </Border>
+
+        <Grid x:Name="GridTop" Grid.Row="0" Grid.Column="1" Opacity="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>                
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="GridFind" Grid.Column="0">
+                <Button Background="LightBlue" Height="30" FontSize="20"
+                           HorizontalAlignment="Right" 
+                        >Не найдено ни одного хода. Перемешать?</Button>
+            </Grid>
+
+            <Grid x:Name="GridYes1"  Grid.Column="1">
+                <Button x:Name="buttonYes1" Background="LightBlue" Width="30" Height="30" 
+                        FontSize="14" HorizontalAlignment="Right"
+                        Click="button_Click_YesNo">YES</Button>
+            </Grid>
+            <Grid x:Name="GridNo1" Grid.Column="2">
+                <Button x:Name="buttonNo1" Background="LightBlue" Width="30" Height="30" 
+                        FontSize="14"
+                        Click="button_Click_YesNo">NO</Button>
+            </Grid>
+        </Grid>
+
+
+        <Grid x:Name="GridCenter" Grid.Row="1" Grid.Column="1"/>
+
+
+        <Grid x:Name="GridBottom" Grid.Row="2" Grid.Column="1" Opacity="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="GridFinish" Grid.Column="0">
+                <Button Background="YellowGreen" Height="40" FontSize="20"
+                           FontWeight="Bold" HorizontalAlignment="Right" 
+                        >ИГРА ОКОНЧЕНА! НОВАЯ ИГРА?</Button>
+            </Grid>
+            
+            <Grid x:Name="GridYes"  Grid.Column="1">
+                <Button x:Name="buttonYes" Background="YellowGreen" Width="40" Height="40" 
+                        FontSize="20" FontWeight="Bold" HorizontalAlignment="Right"
+                        Click="button_Click_YesNo">YES</Button>
+            </Grid>
+            <Grid x:Name="GridNo" Grid.Column="2">
+                <Button x:Name="buttonNo" Background="YellowGreen" Width="40" Height="40" 
+                        FontSize="20" FontWeight="Bold"
+                        Click="button_Click_YesNo">NO</Button>
+            </Grid>
+        </Grid>        
+    </Grid>
+</Window>
