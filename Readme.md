@@ -1,6 +1,8 @@
 # Game *** Mahjong ***
 ****Rules of the game****
-
+![Image_Project](https://github.com/StehniiTania/Mahjong/tree/main/Picture)
+                 
+                 
 The essence of the game is to remove identical cards located on the edge. 
 Or identical cards that are side by side on the same line anywhere. 
 Help is a magic wand.
